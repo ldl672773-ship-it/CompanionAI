@@ -125,7 +125,7 @@ const ConnectionEditor: React.FC<ConnectionEditorProps> = ({
                     {template.ui.editableCompletionPath && (
                         <View>
                             <ThemedTextInput
-                                label="补全 URL"
+                                label="API 接口地址"
                                 value={values.endpoint}
                                 onChangeText={(value) => {
                                     setValues({ ...values, endpoint: value })
@@ -138,7 +138,7 @@ const ConnectionEditor: React.FC<ConnectionEditorProps> = ({
                     {template.ui.editableModelPath && (
                         <View>
                             <ThemedTextInput
-                                label="模型 URL"
+                                label="模型列表地址"
                                 value={values.modelEndpoint}
                                 onChangeText={(value) => {
                                     setValues({ ...values, modelEndpoint: value })
@@ -163,7 +163,7 @@ const ConnectionEditor: React.FC<ConnectionEditorProps> = ({
                     {template.features.useKey && (
                         <ThemedTextInput
                             secureTextEntry
-                            label="API 密钥"
+                            label="API Key"
                             value={values.key}
                             onChangeText={(value) => {
                                 setValues({ ...values, key: value })

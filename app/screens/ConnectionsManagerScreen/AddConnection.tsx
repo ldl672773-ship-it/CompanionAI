@@ -95,7 +95,7 @@ const AddConnection = () => {
                 />
 
                 <ThemedTextInput
-                    label="友好名称"
+                    label="名称"
                     value={values.friendlyName}
                     onChangeText={(value) => {
                         setValues({ ...values, friendlyName: value })
@@ -105,7 +105,7 @@ const AddConnection = () => {
                 {template.ui.editableCompletionPath && (
                     <View>
                         <ThemedTextInput
-                            label="补全 URL"
+                            label="API 接口地址"
                             value={values.endpoint}
                             onChangeText={(value) => {
                                 setValues({ ...values, endpoint: value })
@@ -118,7 +118,7 @@ const AddConnection = () => {
                 {template.ui.editableModelPath && (
                     <View>
                         <ThemedTextInput
-                            label="模型 URL"
+                            label="模型列表地址"
                             value={values.modelEndpoint}
                             onChangeText={(value) => {
                                 setValues({ ...values, modelEndpoint: value })
@@ -142,7 +142,7 @@ const AddConnection = () => {
 
                 {template.features.useKey && (
                     <ThemedTextInput
-                        label="API 密钥"
+                        label="API Key"
                         secureTextEntry
                         value={values.key}
                         onChangeText={(value) => {
