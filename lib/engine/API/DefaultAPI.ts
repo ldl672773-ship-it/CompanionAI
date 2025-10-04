@@ -6,7 +6,7 @@ export const defaultTemplates: APIConfiguration[] = [
     // Chat Completions (Vision/Audio)
     {
         version: 1,
-        name: 'OpenAI (聊天补全/图像/音频)',
+        name: 'OpenAI (多模态)',
 
         defaultValues: {
             endpoint: 'https://api.openai.com/v1/chat/completions',
@@ -76,7 +76,7 @@ export const defaultTemplates: APIConfiguration[] = [
     // Chat Completions
     {
         version: 1,
-        name: 'OpenAI (聊天补全)',
+        name: 'OpenAI',
 
         defaultValues: {
             endpoint: 'https://api.openai.com/v1/chat/completions',
@@ -144,7 +144,7 @@ export const defaultTemplates: APIConfiguration[] = [
     // Text Completions
     {
         version: 1,
-        name: 'OpenAI (文本补全)',
+        name: '自定义 (OpenAI 协议)',
 
         defaultValues: {
             endpoint: 'https://openai.com/chatgpt/api/chat',
