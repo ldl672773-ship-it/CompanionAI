@@ -141,6 +141,7 @@ export enum AppSettings {
     AutoGenerateTitle = 'settings-auto-generate-title',
     WideChatMode = 'settings-wide-chat-mode',
     AlternatingChatMode = 'settings-alternative-chat-mode',
+    UserAgreementAccepted = 'settings-user-agreement-accepted',
 }
 
 /**
@@ -177,6 +178,7 @@ export const AppSettingsDefault: Record<AppSettings, boolean> = {
     [AppSettings.AutoGenerateTitle]: true,
     [AppSettings.WideChatMode]: false,
     [AppSettings.AlternatingChatMode]: false,
+    [AppSettings.UserAgreementAccepted]: false,
 }
 
 export const CLAUDE_VERSION = '2023-06-01'

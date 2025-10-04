@@ -33,7 +33,7 @@ AI伴聊是一款免费开源的AI聊天应用，支持多种主流AI模型（Op
 
 ### Android
 
-- **最新版本**：[v1.0.0](https://github.com/LDL672773-发货/CompanionAI/releases/latest)
+- **最新版本**：[v1.0.0](https://github.com/ldl672773-ship-it/CompanionAI/releases/latest)
 - **系统要求**：Android 7.0+ (API 24+)
 - **推荐配置**：Android 11+，支持144Hz屏幕
 
@@ -106,7 +106,7 @@ AI伴聊是一款免费开源的AI聊天应用，支持多种主流AI模型（Op
 ### 克隆仓库
 
 ```bash
-git clone https://github.com/LDL672773-发货/CompanionAI.git
+git clone https://github.com/ldl672773-ship-it/CompanionAI.git
 cd CompanionAI
 ```
 
@@ -184,8 +184,8 @@ APK位置：`android/app/build/outputs/apk/release/app-release.apk`
 ## 📞 联系方式
 
 - **开发者**：LDL
-- **GitHub**：https://github.com/LDL672773-发货/CompanionAI
-- **问题反馈**：[GitHub Issues](https://github.com/LDL672773-发货/CompanionAI/issues)
+- **GitHub**：https://github.com/ldl672773-ship-it/CompanionAI
+- **问题反馈**：[GitHub Issues](https://github.com/ldl672773-ship-it/CompanionAI/issues)
 
 ---
 
@@ -200,7 +200,7 @@ APK位置：`android/app/build/outputs/apk/release/app-release.apk`
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=LDL672773-发货/CompanionAI&type=Date)](https://star-history.com/#LDL672773-发货/CompanionAI&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=ldl672773-ship-it/CompanionAI&type=Date)](https://star-history.com/#ldl672773-ship-it/CompanionAI&Date)
 
 ---
 

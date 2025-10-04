@@ -1,5 +1,6 @@
 import '@lib/i18n'
 import { AlertBox } from '@components/views/Alert'
+import { useUserAgreement } from '@components/views/UserAgreementModal'
 import { rawdb } from '@db'
 import { Theme } from '@lib/theme/ThemeManager'
 import { useDrizzleStudio } from 'expo-drizzle-studio-plugin'
@@ -17,6 +18,7 @@ setOptions({
 
 const Layout = () => {
     useDrizzleStudio(rawdb)
+    useUserAgreement()
     const { color } = Theme.useTheme()
 
     return (

@@ -104,7 +104,7 @@
 
 1. **开源协议**
    - 本应用遵循AGPL-3.0开源协议
-   - 源代码托管于：https://github.com/LDL672773-发货/CompanionAI
+   - 源代码托管于：https://github.com/ldl672773-ship-it/CompanionAI
    - 任何人可自由使用、修改、分发本应用源代码
    - 修改后的版本必须同样开源并保留原作者版权声明
 
@@ -157,7 +157,7 @@
 ### 十、联系方式
 
 - 开发者：LDL
-- GitHub：https://github.com/LDL672773-发货/CompanionAI
+- GitHub：https://github.com/ldl672773-ship-it/CompanionAI
 - 问题反馈：GitHub Issues
 
 ---

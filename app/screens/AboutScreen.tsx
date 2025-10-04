@@ -83,7 +83,7 @@ const AboutScreen = () => {
                     iconName="github"
                     iconSize={20}
                     onPress={() => {
-                        Linking.openURL('https://github.com/LDL672773-发货/CompanionAI')
+                        Linking.openURL('https://github.com/ldl672773-ship-it/CompanionAI')
                     }}
                 />
                 <ThemedButton
@@ -103,7 +103,7 @@ const AboutScreen = () => {
                 iconName="filetext1"
                 iconSize={18}
                 onPress={() => {
-                    Linking.openURL('https://github.com/LDL672773-发货/CompanionAI/blob/main/LEGAL_DOCS.md')
+                    Linking.openURL('https://github.com/ldl672773-ship-it/CompanionAI/blob/main/LEGAL_DOCS.md')
                 }}
             />
         </View>
