@@ -105,13 +105,14 @@ const AddConnection = () => {
                 {template.ui.editableCompletionPath && (
                     <View>
                         <ThemedTextInput
-                            label="API 接口地址"
+                            label="中转站地址"
+                            placeholder="https://api.example.com/v1/chat/completions"
                             value={values.endpoint}
                             onChangeText={(value) => {
                                 setValues({ ...values, endpoint: value })
                             }}
                         />
-                        <Text style={styles.hintText}>注意: 使用完整 URL 路径</Text>
+                        <Text style={styles.hintText}>填写完整的API地址,如 https://api.openai.com/v1/chat/completions</Text>
                     </View>
                 )}
 

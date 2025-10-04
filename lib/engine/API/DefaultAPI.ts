@@ -68,8 +68,8 @@ export const defaultTemplates: APIConfiguration[] = [
 
         ui: {
             editableCompletionPath: true,
-            editableModelPath: true,
-            selectableModel: true,
+            editableModelPath: false,
+            selectableModel: false,
         },
     },
 ]
