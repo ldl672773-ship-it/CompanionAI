@@ -2,6 +2,7 @@ import Alert from '@components/views/Alert'
 import PopupMenu, { MenuRef } from '@components/views/PopupMenu'
 import { CharInfo, Characters } from '@lib/state/Characters'
 import { useRouter } from 'expo-router'
+import { useTranslation } from 'react-i18next'
 
 type CharacterEditPopupProps = {
     characterInfo: CharInfo
@@ -15,19 +16,20 @@ const CharacterEditPopup: React.FC<CharacterEditPopupProps> = ({
     nowLoading,
 }) => {
     const router = useRouter()
+    const { t } = useTranslation()
 
     const setCurrentCard = Characters.useCharacterStore((state) => state.setCard)
 
     const deleteCard = (menuRef: MenuRef) => {
         Alert.alert({
-            title: '删除角色',
-            description: `确定要删除 '${characterInfo.name}' 吗? 此操作无法撤销`,
+            title: t('characters.delete'),
+            description: t('characters.deleteConfirm', { name: characterInfo.name }),
             buttons: [
                 {
-                    label: '取消',
+                    label: t('common.actions.cancel'),
                 },
                 {
-                    label: '删除角色',
+                    label: t('characters.delete'),
                     onPress: async () => {
                         Characters.db.mutate.deleteCard(characterInfo.id ?? -1)
                     },
@@ -39,14 +41,14 @@ const CharacterEditPopup: React.FC<CharacterEditPopupProps> = ({
 
     const cloneCard = (menuRef: MenuRef) => {
         Alert.alert({
-            title: '克隆角色',
-            description: `确定要克隆 '${characterInfo.name}' 吗?`,
+            title: t('characters.clone'),
+            description: t('characters.cloneConfirm', { name: characterInfo.name }),
             buttons: [
                 {
-                    label: '取消',
+                    label: t('common.actions.cancel'),
                 },
                 {
-                    label: '克隆角色',
+                    label: t('characters.clone'),
                     onPress: async () => {
                         setNowLoading(true)
                         await Characters.db.mutate.duplicateCard(characterInfo.id)
@@ -73,9 +75,9 @@ const CharacterEditPopup: React.FC<CharacterEditPopupProps> = ({
             disabled={nowLoading}
             icon="edit"
             options={[
-                { label: '编辑', icon: 'edit', onPress: editCharacter },
-                { label: '克隆', icon: 'copy1', onPress: cloneCard },
-                { label: '删除', icon: 'delete', onPress: deleteCard, warning: true },
+                { label: t('common.actions.edit'), icon: 'edit', onPress: editCharacter },
+                { label: t('common.actions.copy'), icon: 'copy1', onPress: cloneCard },
+                { label: t('common.actions.delete'), icon: 'delete', onPress: deleteCard, warning: true },
             ]}
         />
     )

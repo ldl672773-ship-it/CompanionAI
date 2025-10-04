@@ -1,9 +1,11 @@
 import { Ionicons } from '@expo/vector-icons'
 import { Theme } from '@lib/theme/ThemeManager'
 import { Text, View } from 'react-native'
+import { useTranslation } from 'react-i18next'
 
 const CharSearchEmpty = () => {
     const { color, spacing, fontSize } = Theme.useTheme()
+    const { t } = useTranslation()
     return (
         <View
             style={{
@@ -21,7 +23,7 @@ const CharSearchEmpty = () => {
                     fontStyle: 'italic',
                     fontSize: fontSize.l,
                 }}>
-                没有角色匹配搜索结果
+                {t('characters.searchEmpty')}
             </Text>
         </View>
     )

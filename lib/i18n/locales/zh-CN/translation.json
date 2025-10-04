@@ -109,7 +109,13 @@
     "deleteMessage": "删除消息",
     "editMessage": "编辑消息",
     "copyMessage": "复制消息",
-    "regenerate": "重新生成"
+    "regenerate": "重新生成",
+    "inputPlaceholder": "Message...",
+    "rollbackTitle": "回溯到此消息",
+    "rollbackDescription": "将删除此消息之后的所有内容,确定吗?",
+    "rollbackSuccess": "已回溯",
+    "regenerating": "正在重新生成...",
+    "onlyRegenerateAI": "只能重新生成AI回复"
   },
   "settings": {
     "title": "设置",

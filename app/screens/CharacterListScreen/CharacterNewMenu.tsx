@@ -5,6 +5,7 @@ import { Logger } from '@lib/state/Logger'
 import { useRouter } from 'expo-router'
 import { useState } from 'react'
 import { useShallow } from 'zustand/react/shallow'
+import { useTranslation } from 'react-i18next'
 
 type CharacterNewMenuProps = {
     nowLoading: boolean
@@ -20,11 +21,12 @@ const CharacterNewMenu: React.FC<CharacterNewMenuProps> = ({ nowLoading, setNowL
     )
 
     const router = useRouter()
+    const { t } = useTranslation()
     const [showNewChar, setShowNewChar] = useState<boolean>(false)
 
     const handleCreateCharacter = async (text: string) => {
         if (!text) {
-            Logger.errorToast('名称不能为空!')
+            Logger.errorToast(t('characters.nameCannotBeEmpty'))
             return
         }
         Characters.db.mutate.createCard(text).then(async (id) => {
@@ -40,16 +42,16 @@ const CharacterNewMenu: React.FC<CharacterNewMenuProps> = ({ nowLoading, setNowL
         <>
             <TextBoxModal
                 booleans={[showNewChar, setShowNewChar]}
-                title="创建新角色"
+                title={t('characters.createNew')}
                 onConfirm={handleCreateCharacter}
-                placeholder="名称..."
+                placeholder={t('characters.namePlaceholder')}
             />
 
             <PopupMenu
                 icon="adduser"
                 options={[
                     {
-                        label: '从文件导入',
+                        label: t('characters.importFromFile'),
                         onPress: (menu) => {
                             Characters.importCharacter()
                             menu.current?.close()
@@ -57,7 +59,7 @@ const CharacterNewMenu: React.FC<CharacterNewMenuProps> = ({ nowLoading, setNowL
                         icon: 'upload',
                     },
                     {
-                        label: '创建角色',
+                        label: t('characters.create'),
                         onPress: (menu) => {
                             setShowNewChar(true)
                             menu.current?.close()

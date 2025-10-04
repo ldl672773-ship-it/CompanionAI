@@ -13,6 +13,7 @@ import { useCallback } from 'react'
 import { BackHandler, Text, View } from 'react-native'
 import { useMMKVBoolean } from 'react-native-mmkv'
 import Animated, { FadeInUp, FadeOutUp, LinearTransition } from 'react-native-reanimated'
+import { useTranslation } from 'react-i18next'
 
 import SortButton from './SortButton'
 
@@ -25,6 +26,7 @@ const CharacterListHeader: React.FC<CharacterListHeaderProps> = ({ resultLength 
         CharacterSorter.useSorter()
 
     const { color } = Theme.useTheme()
+    const { t } = useTranslation()
 
     useFocusEffect(
         useCallback(() => {
@@ -59,10 +61,10 @@ const CharacterListHeader: React.FC<CharacterListHeaderProps> = ({ resultLength 
                             color: color.text._400,
                             fontSize: 16,
                         }}>
-                        排序方式
+                        {t('characters.sortBy')}
                     </Text>
-                    <SortButton type="modified" label="最近" />
-                    <SortButton type="name" label="名称" />
+                    <SortButton type="modified" label={t('characters.recent')} />
+                    <SortButton type="name" label={t('characters.name')} />
                 </View>
                 <View
                     style={{
@@ -93,7 +95,7 @@ const CharacterListHeader: React.FC<CharacterListHeaderProps> = ({ resultLength 
                             style={{
                                 color: resultLength === 0 ? color.text._700 : color.text._100,
                             }}
-                            placeholder="搜索名称..."
+                            placeholder={t('characters.searchPlaceholder')}
                         />
                         {textFilter && (
                             <Text
@@ -101,7 +103,7 @@ const CharacterListHeader: React.FC<CharacterListHeaderProps> = ({ resultLength 
                                     marginTop: 8,
                                     color: color.text._400,
                                 }}>
-                                结果: {resultLength}
+                                {t('characters.results', { count: resultLength })}
                             </Text>
                         )}
                     </Animated.View>

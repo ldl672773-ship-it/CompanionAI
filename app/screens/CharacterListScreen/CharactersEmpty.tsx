@@ -1,9 +1,11 @@
 import { Ionicons } from '@expo/vector-icons'
 import { Theme } from '@lib/theme/ThemeManager'
 import { View, Text } from 'react-native'
+import { useTranslation } from 'react-i18next'
 
 const CharactersEmpty = () => {
     const { color, spacing, fontSize } = Theme.useTheme()
+    const { t } = useTranslation()
     return (
         <View
             style={{
@@ -21,7 +23,7 @@ const CharactersEmpty = () => {
                     fontStyle: 'italic',
                     fontSize: fontSize.l,
                 }}>
-                未找到角色。尝试导入一些角色!
+                {t('characters.empty')}
             </Text>
         </View>
     )

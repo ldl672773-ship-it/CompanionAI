@@ -25,6 +25,7 @@ import Animated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { create } from 'zustand'
 import { useShallow } from 'zustand/react/shallow'
+import { useTranslation } from 'react-i18next'
 
 import ChatOptions from './ChatInputOptions'
 import ImagePickerMenu from './ImagePickerMenu'
@@ -50,6 +51,7 @@ export const useInputHeightStore = create<ChatInputHeightStoreProps>()((set) => 
 const ChatInput = () => {
     const insets = useSafeAreaInsets()
     const inputRef = useUnfocusTextInput()
+    const { t } = useTranslation()
 
     const { color, borderRadius, spacing } = Theme.useTheme()
     const [sendOnEnter, _] = useMMKVBoolean(AppSettings.SendOnEnter)
@@ -231,7 +233,7 @@ const ChatInput = () => {
                         setHideOptions(!!newMessage)
                     }}
                     numberOfLines={6}
-                    placeholder="Message..."
+                    placeholder={t('chat.inputPlaceholder')}
                     placeholderTextColor={color.text._700}
                     value={newMessage}
                     onChangeText={(text) => {

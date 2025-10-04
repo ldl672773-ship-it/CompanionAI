@@ -6,6 +6,7 @@ import { Theme } from '@lib/theme/ThemeManager'
 import React from 'react'
 import { Alert, View } from 'react-native'
 import Animated, { ZoomIn, ZoomOut } from 'react-native-reanimated'
+import { useTranslation } from 'react-i18next'
 
 interface ChatMessageActionsProps {
     index: number
@@ -14,19 +15,20 @@ interface ChatMessageActionsProps {
 
 const ChatMessageActions: React.FC<ChatMessageActionsProps> = ({ index, onClose }) => {
     const { color } = Theme.useTheme()
+    const { t } = useTranslation()
     const message = Chats.useEntryData(index)
     const nowGenerating = useInference((state) => state.nowGenerating)
 
     const handleRollback = () => {
-        Alert.alert('回溯到此消息', '将删除此消息之后的所有内容,确定吗?', [
-            { text: '取消', style: 'cancel' },
+        Alert.alert(t('chat.rollbackTitle'), t('chat.rollbackDescription'), [
+            { text: t('common.actions.cancel'), style: 'cancel' },
             {
-                text: '确定',
+                text: t('common.actions.confirm'),
                 style: 'destructive',
                 onPress: async () => {
                     onClose()
                     await deleteMessagesAfterIndex(index)
-                    Logger.infoToast('已回溯')
+                    Logger.infoToast(t('chat.rollbackSuccess'))
                 },
             },
         ])
@@ -36,9 +38,9 @@ const ChatMessageActions: React.FC<ChatMessageActionsProps> = ({ index, onClose 
         onClose()
         const success = await regenerateMessage(index)
         if (success) {
-            Logger.infoToast('正在重新生成...')
+            Logger.infoToast(t('chat.regenerating'))
         } else {
-            Logger.warnToast('只能重新生成AI回复')
+            Logger.warnToast(t('chat.onlyRegenerateAI'))
         }
     }
 
