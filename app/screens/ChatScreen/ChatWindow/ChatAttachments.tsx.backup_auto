@@ -1,0 +1,36 @@
+import ScaledImage from '@components/views/ScaledImage'
+import { Chats } from '@lib/state/Chat'
+import { Dimensions, View } from 'react-native'
+
+type ChatAttachmentsProps = {
+    index: number
+}
+
+const ChatAttachments: React.FC<ChatAttachmentsProps> = ({ index }) => {
+    const message = Chats.useEntryData(index)
+
+    if (message.attachments.length < 1) return null
+    return (
+        <View style={{ rowGap: 8 }}>
+            <View
+                style={{
+                    paddingVertical: 4,
+                    rowGap: 8,
+                    columnGap: 8,
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                }}>
+                {message.attachments.map((item) => (
+                    <ScaledImage
+                        cachePolicy="none"
+                        key={item.image_uri}
+                        uri={item.image_uri}
+                        style={{ height: Dimensions.get('window').height / 8, borderRadius: 8 }}
+                    />
+                ))}
+            </View>
+        </View>
+    )
+}
+
+export default ChatAttachments

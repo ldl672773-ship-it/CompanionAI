@@ -1,0 +1,83 @@
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# React Native
+node_modules/
+.expo-shared/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Metro
+.metro-health-check*
+
+# macOS
+.DS_Store
+*.pem
+
+# Android
+android/app/build/
+android/build/
+android/.gradle/
+android/app/release/
+android/app/debug/
+*.apk
+*.aab
+!app-release.apk
+
+# iOS
+ios/Pods/
+ios/build/
+*.ipa
+*.xcworkspace
+!default.xcworkspace
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary
+*.tmp
+*.temp
+.cache/
+
+# Build artifacts
+build_*.log
+ANIMATION_OPTIMIZATION_RESULT.md
+ADVANCED_PERFORMANCE_OPTIMIZATION.md
+144HZ_OPTIMIZATION.md
+144HZ_FINAL_OPTIMIZATION_REPORT.md
+LOG_SUPPRESSION_OPTIMIZATION_REPORT.md
+PROJECT_SUMMARY.md
+FINAL_STEPS.md
+_deprecated/
+
+# Development notes (保留重要文档)
+# README.md - 保留
+# LICENSE - 保留
+# LEGAL_DOCS.md - 保留
